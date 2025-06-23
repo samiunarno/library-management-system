@@ -1,46 +1,80 @@
 <div align="center">
 
-  <h1 style="color:#58d6ff; font-size:2.5rem;"> Library Management API</h1>
+<h1 style="color:#58d6ff; font-size:2.8rem;">📚 Library Management API</h1>
 
-  <p style="max-width:700px; font-size:1.1rem; color:#cccccc;">
-    A modern, RESTful API to manage a digital library system. Built with <strong>Node.js, Express, TypeScript, and MongoDB</strong>.
-  </p>
+<p style="max-width:700px; font-size:1.1rem; color:#cccccc;">
+A robust, RESTful API designed to streamline the operations of a digital library system.<br>
+Built with <strong>Node.js, Express, TypeScript, and MongoDB</strong>.
+</p>
 
-  <br>
+<p align="center">
+  <a href="https://library-management-system-one-red.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Live-API-green?style=for-the-badge&logo=vercel" alt="Live API">
+  </a>
+ 
+</p>
 
-  <img src="https://raw.githubusercontent.com/samiun-404/assets/main/library-api-banner.gif" alt="Library Banner" width="80%" style="border-radius:12px; box-shadow:0 0 15px #00000055;">
+<br>
 
-  <br><br>
+<img src="https://raw.githubusercontent.com/samiun-404/assets/main/library-api-banner.gif" alt="Library Banner" width="80%" style="border-radius:12px; box-shadow:0 0 15px #00000055;">
 
-  <h2 style="color:#00e5ff;">🚀 Live API Base URL</h2>
-  <code style="background:#1e1e2e; color:#80cbc4; padding:10px 16px; border-radius:6px;">https://library-management-system-one-red.vercel.app/</code>
-
-  <br><br>
-
-  <h2 style="color:#00e676;">🧩 Features</h2>
 </div>
 
-<ul align="left" style="max-width:800px; margin:auto; font-size:1rem;">
-  <li>✅ CRUD operations on books</li>
-  <li>📥 Borrow books with due date and quantity control</li>
-  <li>🔄 Auto-update availability when copies run out</li>
-  <li>📊 Aggregation-based summary of borrowed books</li>
-  <li>🔍 Filter and sort book listings</li>
-  <li>⚠️ Central error handling with validation messages</li>
-</ul>
+---
 
-<div align="center">
-  <br>
+## 📖 About the Project
 
-  <h2 style="color:#ffd54f;">🛠 Technologies Used</h2>
-  <p style="color:#ffecb3;">Node.js · Express.js · TypeScript · MongoDB · Mongoose · REST API</p>
+The Library Management API is a robust, modular, and scalable backend application built for managing the core functionalities of a digital or physical library system. Designed with modern development best practices in mind, this API empowers organizations to seamlessly handle book inventory, user borrowing activity, return tracking, and data reporting with efficiency and clarity.
 
-  <br>
+This API serves as a foundational service layer for full-stack applications such as library portals, student dashboards, admin panels, or mobile apps used in educational institutions, corporate learning centers, or public libraries.
 
-  <h2 style="color:#64b5f6;">📁 Folder Structure</h2>
-</div>
+🔧 Key Highlights:
+Modular Code Architecture: The application is structured using domain-based module separation (Book, Borrow, etc.) allowing easy scaling and maintenance.
 
-<pre style="background:#263238; color:#cfd8dc; padding:16px; border-radius:10px; max-width:700px; margin:auto; font-size:0.9rem;">
+Type Safety & Scalability: Built with TypeScript for type safety, ensuring fewer runtime errors and a better developer experience.
+
+MongoDB Aggregation Pipeline: Advanced reporting capabilities like summaries of borrowed books, availability stats, and return tracking are implemented using MongoDB's aggregation framework.
+
+RESTful Design: Follows standard REST principles for endpoint consistency, allowing smooth integration with any frontend or third-party service.
+
+Robust Validation & Error Handling: Every endpoint includes detailed request validation and a centralized error-handling mechanism for meaningful feedback.
+
+Reusable Utility Patterns: Includes common response formatters, error classes, and custom middlewares for scalability and clean code.
+
+---
+
+## 🚀 Live API
+
+> 🟢 [https://library-management-system-one-red.vercel.app/](https://library-management-system-one-red.vercel.app/)
+
+---
+
+## 🧩 Features
+
+- ✅ CRUD operations for books  
+- 📥 Borrow books with due dates and stock control  
+- 📉 Real-time update of available copies  
+- 📊 Summary reporting via aggregation  
+- 🔍 Filtering & sorting support  
+- ⚠️ Global error and validation system  
+
+---
+
+## 🛠 Tech Stack
+
+| Tech         | Description                            |
+|--------------|----------------------------------------|
+| **Node.js**  | Runtime for server-side JavaScript     |
+| **Express**  | Minimal and flexible web framework     |
+| **TypeScript**| Typed superset of JavaScript           |
+| **MongoDB**  | NoSQL database with flexible schemas   |
+| **Mongoose** | Elegant MongoDB object modeling        |
+
+---
+
+## 📁 Folder Structure
+
+```bash
 src/
 ├── app/
 │   ├── modules/
@@ -51,17 +85,21 @@ src/
 ├── index.ts
 ├── app.ts
 └── server.ts
+```
 
-</pre>
+---
 
-<div align="center">
-  <br>
-  <h2 style="color:#f48fb1;">📘 Sample Endpoint</h2>
-  <h4>➕ Create Book</h4>
-  <code>POST /api/books</code>
-</div>
+## 📘 Sample Endpoint
 
-<pre style="background:#1a237e; color:#bbdefb; padding:12px; border-radius:8px; max-width:700px; margin:auto;">
+### ➕ Create Book
+
+```http
+POST /api/books
+```
+
+#### 📦 Sample Payload
+
+```json
 {
   "title": "The Theory of Everything",
   "author": "Stephen Hawking",
@@ -70,37 +108,57 @@ src/
   "description": "An overview of cosmology and black holes.",
   "copies": 5
 }
-</pre>
+```
+
+---
+
+## 🧪 Getting Started
+
+### 🛠 Setup Instructions
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/yourusername/library-management-api.git
+
+# 2. Navigate into the project directory
+cd library-management-api
+
+# 3. Install dependencies
+npm install
+
+# 4. Configure environment variables
+touch .env
+# Add your MongoDB URI and other keys
+
+# 5. Start development server
+npm run dev
+```
+
+---
+
+## ✅ Project Checklist
+
+- [x] TypeScript + Express boilerplate  
+- [x] MongoDB integration  
+- [x] Book & Borrow modules  
+- [x] Borrow logic & availability handling  
+- [x] Aggregation for summary reports  
+- [x] Global error formatter  
+
+---
+
+## 📌 Useful Links
+
+| Resource        | Link                                                                 |
+|-----------------|----------------------------------------------------------------------|
+| 🧪 Postman Docs  | *Coming Soon*                                                        |
+| 🧾 API Reference | *Swagger support planned*                                            |
+| 🌐 Deployed On   | [Vercel](https://vercel.com/)                                       |
+| 📂 GitHub Repo   | [library-management-api](https://github.com/samiunarno/library-management-system) |
+
+---
 
 <div align="center">
-  <br>
-  <h2 style="color:#ff8a65;">🧪 Getting Started</h2>
-</div>
-
-<ol style="max-width:700px; margin:auto; color:#ffe0b2;">
-  <li><code>git clone https://github.com/yourusername/library-management-api.git</code></li>
-  <li><code>cd library-management-api</code></li>
-  <li><code>npm install</code></li>
-  <li>Create a <code>.env</code> file with DB settings</li>
-  <li><code>npm run dev</code></li>
-</ol>
-
-<div align="center">
-  <br>
-  <h2 style="color:#ffd740;">Project Checklist</h2>
-</div>
-
-<ul align="left" style="max-width:800px; margin:auto; color:#fff9c4;">
-  <li>[x] TypeScript + Express boilerplate</li>
-  <li>[x] MongoDB connection</li>
-  <li>[x] Book & Borrow models</li>
-  <li>[x] Borrow logic and availability update</li>
-  <li>[x] Aggregation for borrowed summary</li>
-  <li>[x] Error formatting and validation</li>
-</ul>
-
-<div align="center">
-  <br><br>
   <hr style="width:80%; border-top:1px solid #444;">
   <p style="color: #90caf9;">Made with 💙 by <strong>Samiun Mahmud</strong></p>
 </div>
