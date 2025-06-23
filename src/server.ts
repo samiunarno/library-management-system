@@ -10,10 +10,10 @@ const MONGO_URI = process.env.MONGODB_URI as string;
 const serverStarts = async () => {
   try {
     await mongoose.connect(MONGO_URI);
-    console.log("MongoDB connected by Mongoose");
+    console.log("MongoDB connected ");
 
     app.listen(PORT, () => {
-      console.log("App listening on port", PORT);
+      console.log("I am Here Cool You are Connected Man ");
     });
   } catch (error) {
     console.error("Failed to connect:", error);
